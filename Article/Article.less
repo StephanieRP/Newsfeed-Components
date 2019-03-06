@@ -29,7 +29,8 @@
     right: 10px;
   }
 
-  .expandButton {
+  .expandButton,
+  .closeButton {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -39,12 +40,19 @@
     transform: translate(-50%);
     background-color: white;
   }
+  .closeButton {
+    display: none;
+  }
 }
 
 .article-open {
   height: 400px;
 }
 
+.article-close {
+  height: 0;
+}
 
-
-
+.button-appear {
+  display: inline-block;
+}
