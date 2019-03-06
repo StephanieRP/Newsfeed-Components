@@ -11,9 +11,9 @@ class Article {
     // Set a click handler on the expandButton reference, calling the expandArticle method.
 
     this.expandButton.addEventListener("click", () => this.expandArticle());
-    this.expandButton.addEventListener("click", () => this.closeAppear());
+    this.expandButton.addEventListener("click", () => this.closeButtonAppear());
     this.closeButton.addEventListener("click", () => this.closeArticle());
-    this.closeButton.addEventListener("click", () => this.closeAppear());
+    this.closeButton.addEventListener("click", () => this.closeButtonAppear());
   }
 
   expandArticle() {
@@ -21,10 +21,11 @@ class Article {
     this.domElement.classList.add("article-open");
   }
 
-  closeAppear() {
+  closeButtonAppear() {
     if (this.domElement.classList.contains("article-open")) {
       this.expandButton.style.display = "none";
       this.closeButton.style.display = "inline-block";
+      this.closeButton.style.color = "#004D40";
     } else {
       this.expandButton.style.display = "inline-block";
       this.closeButton.style.display = "none";
@@ -33,6 +34,7 @@ class Article {
 
   closeArticle() {
     this.domElement.classList.remove("article-open");
+    this.domElement.classList.add("article-close");
   }
 }
 
